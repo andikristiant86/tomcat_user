@@ -1,0 +1,11 @@
+Mengatur Port HTTP 1.1 dan HTTPS
+
+Untuk mengatur port yang akan digunakan untuk menerima request dari web client, edit pada file $CATALINA_HOME/conf/server.xml, khususnya pada bagian berikut:
+
+<Connector port="8080" protocol="HTTP/1.1"
+  connectionTimeout="20000"
+  redirectPort="8443" />
+
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+  maxThreads="150" scheme="https" secure="true"
+  clientAuth="false" sslProtocol="TLS" />
